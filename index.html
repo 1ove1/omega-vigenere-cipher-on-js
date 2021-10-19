@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chiffre de Vigenère</title>
+	<style>
+		.input-area{
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-start;
+			border: 2px solid #000;
+			box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+		}
+		.input-area__element {
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Лабараторная №3: Шифр Виженера</h1>
+	<div class="input-area">
+		<label for="input-area__text" class="input-area__element">Введите слово:</label>
+		<input type="text" value="" placeholder="PROGRAM" id="input-area__text" class="input-area__element">
+
+		<label for="input-area__key" class="input-area__element">Введите ключ:</label>
+		<input type="text" value="" placeholder="DOGDOGD" id="input-area__key" class="input-area__element">
+
+		<button onclick="do_some_work()" id="input-area__button" class="input-area__element">Выполнить</button>
+
+		<label for="input-area__result" class="input-area__element">Результат:</label>
+		<textarea name="result" id="input-area__result" class="input-area__element" cols="30" rows="10"></textarea>
+	</div>
+
+	<script src="js/script.js"></script>
+	
+</body>
+</html>
