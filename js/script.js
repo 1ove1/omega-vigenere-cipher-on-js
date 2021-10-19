@@ -1,7 +1,8 @@
 const text = document.getElementById('input-area__text');
 const key = document.getElementById('input-area__key');
-const result = document.getElementById('input-area__result');
-const valid = /^[A-Za-z]+(?!\d)$/gm;
+const textArea = document.getElementById('input-area__result');
+
+
 
 function do_some_work() {
 	let txtValue = text.value;
@@ -12,6 +13,9 @@ function do_some_work() {
 		if (txtValue === undefined || keyValue === undefined) {
 			throw SyntaxError('поля ввода пусты: остановка программы')
 		}
+
+		const valid = /^[A-Za-z]+(?!\d)$/gm;
+
 		if (!(txtValue.match(valid) && keyValue.match(valid))) {
 			throw SyntaxError('неверный формат введённых данных: остановка программы')
 		}
@@ -36,7 +40,26 @@ function do_some_work() {
 	}
 
 	// основная часть программы
-	console.log(txtValue.charCodeAt(0));	
+
+	const lowerCasePredict = 97;	
+	const upperCasePredict = 65;
+	let result = '';
+
+	for(let index = 0; index < txtValue.length; ++index) {
+		let currSymbol = txtValue.charCodeAt([index]);
+		let currKeyValue = keyValue.charCodeAt(index);
+		let prefix = (currSymbol < lowerCasePredict) ? upperCasePredict: lowerCasePredict;
+
+		console.log('%d + %d...', currSymbol, currKeyValue);
+		
+		currSymbol = (currSymbol + currKeyValue - prefix * 2) % 26 + prefix;
+
+		console.log('...%d', currSymbol);
+		
+		result += String.fromCharCode(currSymbol);
+	}
+	
+	textArea.value = result;
 }
 
 
@@ -45,5 +68,5 @@ function do_some_work() {
 function deb() {
 	console.log(text.value.length);
 	console.log(key.value);
-	console.log(result.value);
+	console.log(textArea.value);
 }
