@@ -10,7 +10,17 @@
 			flex-direction: column;
 			align-items: flex-start;
 			border: 2px solid #000;
+			margin: 0px 5px;
 			box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+		}
+		.input-area--flat{
+			border: 2px solid silver;
+			margin: 0px 5px;
+			box-shadow: unset;
+		}
+		.input-area--radio-group {
+			display: inline-flex;
+			flex-direction: row-reverse;
 		}
 		.input-area__element {
 			margin: 5px;
@@ -26,13 +36,47 @@
 		<label for="input-area__key" class="input-area__element">Введите ключ:</label>
 		<input type="text" value="DOGDOGD" placeholder="DOGDOGD" id="input-area__key" class="input-area__element">
 
-		<button onclick="do_some_work()" id="input-area__button" class="input-area__element">Выполнить</button>
+		<div class="input-area input-area--flat">
+			<div class="input-area--radio-group">
+				<label for="input-area__submit-radio-encode" class="input-area__element">Шифрование</label>
+				<input type="radio" id="input-area__submit-radio-encode" class="input-area__element" name="submit-radio" checked>	
+			</div>
+			<div class="input-area--radio-group">
+				<label for="input-area__submit-radio-decode" class="input-area__element">Дешифрование</label>
+				<input type="radio" id="input-area__submit-radio-decode" class="input-area__element" name="submit-radio">
+			</div>
+		</div>
+
+		<button onclick="inputSubmit()" id="input-area__button" class="input-area__element">Выполнить</button>
 
 		<label for="input-area__result" class="input-area__element">Результат:</label>
 		<textarea name="result" id="input-area__result" class="input-area__element" cols="30" rows="10"></textarea>
 	</div>
 
-	<script src="js/script.js"></script>
+	<div class="input-area">
+		<label for="input-area__key--file" class="input-area__element">Введите ключ:</label>
+		<input type="text" value="DOGDOGD" placeholder="DOGDOGD" id="input-area__key--file" class="input-area__element">
 
+		<div class="input-area input-area--flat">
+			<div class="input-area--radio-group">
+				<label for="input-area__file-radio-encode" class="input-area__element">Шифрование</label>
+				<input type="radio" id="input-area__file-radio-encode" class="input-area__element" name="file-radio" checked>	
+			</div>
+			<div class="input-area--radio-group">
+				<label for="input-area__file-radio-decode" class="input-area__element">Дешифрование</label>
+				<input type="radio" id="input-area__file-radio-decode" class="input-area__element" name="file-radio">
+			</div>
+		</div>
+
+		<label for="input-area__file" class="input-area__element">Загрузите файл:</label>
+		<input type="file" onchange="inputFile(this)" accept=".txt" id="input-area__file" class="input-area__element">
+
+	</div>
+
+	<script src="js/bootstrap.js"></script>
+	<script src="js/inputSubmit.js"></script>
+	<script src="js/inputFile.js"></script>
+	<script src="js/validation.js"></script>
+	<script src="js/code.js"></script>
 </body>
 </html>
