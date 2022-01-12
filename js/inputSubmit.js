@@ -4,7 +4,7 @@ function inputSubmit() {
 
 	let result = '';
 
-	if (radioCheked(submitRadio) === 0) {
+	if (radioChecked(submitRadio) === 0) {
 		result = encode(txtValue, keyValue);
 	} else {
 		result = decode(txtValue, keyValue);
