@@ -8,7 +8,6 @@ function inputFile(input) {
 
 	reader.onload = function() {
 		let txtValue = String(reader.result);
-		console.log(txtValue);
 		let keyValue = validation(txtValue, keyFile);
 
 		let result = '';

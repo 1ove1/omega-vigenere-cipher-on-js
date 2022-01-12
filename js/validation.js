@@ -7,8 +7,8 @@ function validation(txtValue, keyObject) {
 			throw SyntaxError(': поля ввода пусты: остановка программы')
 		}
 
-		const lowerValid = /^[a-z\s]+(?!\d)$/gm;
-		const higherValid = /^[A-Z\s]+(?!\d)$/gm;
+		const lowerValid = /^[a-z\s\.,]+(?!\d)$/gm;
+		const higherValid = /^[A-Z\s\.,]+(?!\d)$/gm;
 
 		if (!((txtValue.match(lowerValid) && txtKey.match(lowerValid)) || (txtValue.match(higherValid) && txtKey.match(higherValid)))) {
 			throw SyntaxError(': неверный формат введённых данных: остановка программы')

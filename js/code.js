@@ -4,7 +4,7 @@ function encode(strInput, strKey) {
 	let result = '';
 
 	for (let index = 0; index < strInput.length; ++index) {
-		if (strInput[index] === ' ') {
+		if (strInput[index] === ' ' || strInput[index] === ',' || strInput[index] === '.' ) {
 			result += strInput[index];
 			continue;
 		}
@@ -26,7 +26,7 @@ function decode(strInput, strKey) {
 	let result = '';
 
 	for (let index = 0; index < strInput.length; ++index) {
-		if (strInput[index] === ' ') {
+		if (strInput[index] === ' ' || strInput[index] === ',' || strInput[index] === '.' ) {
 			result += strInput[index];
 			continue;
 		}
