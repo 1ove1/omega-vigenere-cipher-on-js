@@ -11,7 +11,11 @@ const fileRadio = [
 	document.getElementById('input-area__file-radio-decode'),
 ]
 
+<<<<<<< HEAD
 function radioChecked(group) {
+=======
+function radioCheked(group) {
+>>>>>>> 1b522aab72b479a681314febad53aa59b87a7ddd
 	for (let i = 0; i < group.length; ++i) {
 		if (group[i].checked) {
 			return i;
