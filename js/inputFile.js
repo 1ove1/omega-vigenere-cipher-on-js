@@ -13,7 +13,7 @@ function inputFile(input) {
 
 		let result = '';
 
-		if (radioCheked(fileRadio) === 0) {
+		if (radioChecked(fileRadio) === 0) {
 			result = encode(txtValue, keyValue);
 		} else {
 			result = decode(txtValue, keyValue);
